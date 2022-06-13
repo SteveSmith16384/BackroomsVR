@@ -24,10 +24,12 @@ func load_room(pos: Vector3):
 
 
 func remove_room(room):
-	var pos = room.global_transform.origin
+	var pos = room.translation#.global_transform.origin
 	main.log_debugging("Removing room at " + str(pos))
-	rooms_created.erase(pos)
+	var res = rooms_created.erase(pos)
 	main.log_debugging("Total rooms: " + str(rooms_created.size()))
+	if res == false:
+		pass
 	room.call_deferred("queue_free")
 	pass
 	
