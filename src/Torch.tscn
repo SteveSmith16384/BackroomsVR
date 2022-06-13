@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Models/torch.obj" type="ArrayMesh" id=1]
+
+[node name="Torch" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.224462, 0, 0.631005 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 0.002, 0, 0, 0, 0.002, 0, 0, 0, 0.002, -0.181444, 0, -0.512076 )
+mesh = ExtResource( 1 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.227805, 0.00416863, -0.798111 )
+light_energy = 5.0
+spot_range = 15.0
+spot_angle = 30.0
