@@ -3,10 +3,6 @@ extends Spatial
 
 onready var main = get_tree().get_root().get_node("Main")
 
-func _process(delta):
-	pass
-	
-
 func _on_Area_Medium_body_entered(body):
 	if body == main.player:
 		Globals.WIDTH = 18

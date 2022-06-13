@@ -113,23 +113,22 @@ func log_debugging(s:String):
 	if Globals.RELEASE_MODE:
 		return
 		
-	log_lines.push_back(str(s))
-	while log_lines.size() > 12:
-		log_lines.remove(0)
-		
-	var text = ""
-	for line in log_lines:
-		text = text + line + "\n"
-	$Viewport/ConsoleLabel.text = text
+#	log_lines.push_back(str(s))
+#	while log_lines.size() > 12:
+#		log_lines.remove(0)
+#		
+#	var text = ""
+#	for line in log_lines:
+#		text = text + line + "\n"
+#	$Viewport/ConsoleLabel.text = text
+	log_text(s)
 	pass
 
 
 func log_text(s:String):
-	if Globals.RELEASE_MODE:
-		return
-		
+	print(s)
 	log_lines.push_back(str(s))
-	while log_lines.size() > 6:
+	while log_lines.size() > 12:
 		log_lines.remove(0)
 		
 	var text = ""
