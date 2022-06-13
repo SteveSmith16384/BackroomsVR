@@ -118,13 +118,9 @@ __meta__ = {
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 5 )
 
-[node name="RestartTimer" type="Timer" parent="."]
-wait_time = 2.0
-
 [node name="Player" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.48124, 15.7769 )
 
 [connection signal="area_entered" from="ARVROrigin/LeftController/LeftHandArea" to="." method="_on_LeftHandArea_area_entered"]
 [connection signal="area_exited" from="ARVROrigin/LeftController/LeftHandArea" to="." method="_on_LeftHandArea_area_exited"]
 [connection signal="pressed" from="ARVROrigin/Button" to="ARVROrigin" method="_on_Button_pressed"]
-[connection signal="timeout" from="RestartTimer" to="." method="_on_RestartTimer_timeout"]

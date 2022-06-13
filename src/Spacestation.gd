@@ -10,7 +10,11 @@ func _ready():
 	
 	
 func load_room(pos: Vector3):
-	var cls = load("Rooms/Room1.tscn")
+	if rooms_created.has(pos):
+		#print("Room already exists")
+		return
+		
+	var cls = load("Rooms/AbstractRoom.tscn") # todol - preload
 	var room = cls.instance()
 	room.spacestation = self
 	room.translation = pos
@@ -20,7 +24,7 @@ func load_room(pos: Vector3):
 	main.log_debugging("Added room at " + str(pos))
 	main.log_debugging("Total rooms: " + str(rooms_created.size()))
 	
-	return room
+	pass
 
 
 func remove_room(room):
@@ -36,15 +40,17 @@ func remove_room(room):
 	
 func player_n(from_room):
 	var pos = from_room.translation
-	pos.z -= 24
-	if rooms_created.has(pos) == false:
-		load_room(pos)
+	pos.z += 24
+	load_room(pos)
+	pos.z += 24
+	load_room(pos)
 	pass
 	
 	
 func player_s(from_room):
 	var pos = from_room.translation
-	pos.z += 24
-	if rooms_created.has(pos) == false:
-		load_room(pos)
+	pos.z -= 24
+	load_room(pos)
+	pos.z -= 24
+	load_room(pos)
 	pass

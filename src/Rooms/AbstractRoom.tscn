@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/Room.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/RoomAreas.gd" type="Script" id=4]
+[ext_resource path="res://Floor.tscn" type="PackedScene" id=5]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 72, 3, 72 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 12, 3, 12 )
+
+[node name="AbstractRoom" type="Spatial"]
+script = ExtResource( 3 )
+
+[node name="Areas" type="Spatial" parent="."]
+script = ExtResource( 4 )
+
+[node name="Area_Remove" type="Area" parent="Areas"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Areas/Area_Remove"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+shape = SubResource( 1 )
+
+[node name="Area_Add" type="Area" parent="Areas"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Areas/Area_Add"]
+shape = SubResource( 2 )
+
+[node name="Floor" parent="." instance=ExtResource( 5 )]
+
+[connection signal="body_exited" from="Areas/Area_Remove" to="Areas" method="_on_Area_Remove_body_exited"]
+[connection signal="body_entered" from="Areas/Area_Add" to="Areas" method="_on_Area_Add_body_entered"]

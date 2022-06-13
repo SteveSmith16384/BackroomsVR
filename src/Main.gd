@@ -45,8 +45,6 @@ func start_game_proper():
 	
 	log_lines.clear()
 	$Viewport/ConsoleLabel.text = ""
-
-	load_astar()
 	pass
 	
 	
@@ -82,7 +80,7 @@ func move_player(_delta:float):
 	var left_joy : Vector2 = arvr.left_joy_pos
 	
 	if Globals.TEST_MODE:
-		left_joy.y = 1
+		left_joy.y = -1
 		
 	var cam_basis = camera.global_transform.basis
 	var direction: Vector3 = Vector3.ZERO
@@ -99,11 +97,6 @@ func move_player(_delta:float):
 	pass
 	
 
-func fire_bullet(pos:Vector3, transform: Transform):
-	player.fire_bullet(pos, transform)
-	pass
-	
-	
 func set_text(s:String):
 	$Viewport/ConsoleLabel.text = s
 	pass
@@ -113,14 +106,6 @@ func log_debugging(s:String):
 	if Globals.RELEASE_MODE:
 		return
 		
-#	log_lines.push_back(str(s))
-#	while log_lines.size() > 12:
-#		log_lines.remove(0)
-#		
-#	var text = ""
-#	for line in log_lines:
-#		text = text + line + "\n"
-#	$Viewport/ConsoleLabel.text = text
 	log_text(s)
 	pass
 
@@ -128,7 +113,7 @@ func log_debugging(s:String):
 func log_text(s:String):
 	print(s)
 	log_lines.push_back(str(s))
-	while log_lines.size() > 12:
+	while log_lines.size() > 10:
 		log_lines.remove(0)
 		
 	var text = ""
@@ -148,16 +133,10 @@ func player_killed():
 	$Player.alive = false
 	#$Player.get_node("Audio_Hit").play()
 
-	$RestartTimer.start()
 	red_filter_mat.albedo_color.a = 1
-	pass
-	
-	
-func _on_RestartTimer_timeout():
-	#log_text("Restarting")
-	$RestartTimer.stop()
 
-	#$Player.restart(start_pos)
+	yield(get_tree().create_timer(3), "timeout")
+
 	start_game_proper()
 	pass
 	
@@ -181,74 +160,10 @@ func _on_LeftHandArea_area_entered(area):
 
 func _on_LeftHandArea_area_exited(area):
 	if area.is_in_group("touchable") == false:
-		return		
+		return
 	pass
 
 
-func exit_entered(entity):
-	if entity == player:
-		self.log_text("You have escaped!")
-		call_deferred("load_scene", "IntroScene")
-		pass
-	pass
-	
-
-func load_astar():
-	astar = AStar.new()
-
-	for nav_point in nav_points:
-		astar.add_point(nav_point.id, nav_point.global_transform.origin)
-		
-	for nav_point in nav_points:
-		for other in nav_points:
-			if nav_point == other:
-				continue
-			var dist = nav_point.global_transform.origin.distance_to(other.global_transform.origin)
-			if dist > Globals.SQ_SIZE+1:
-				continue
-			if can_see(nav_point, other) == false:
-				continue
-
-			astar.connect_points(nav_point.id, other.id)
-
-	pass
-	
-
-func get_final_dest() -> Vector3:
-	var m = nav_points.size()
-	var idx = Globals.rnd.randi_range(0, m-1)
-	return nav_points[idx].global_transform.origin
-
-
-func get_route(start:Vector3, end:Vector3):
-	if astar == null:
-		return [start]
-	var id_from = astar.get_closest_point(start)
-	var id_to = astar.get_closest_point(end)
-	var r = astar.get_point_path(id_from, id_to)
-	if r.size() == 0:
-		print("Unable to get route!")
-	return r
-	
-
-#func get_closest_point(pos: Vector3):
-#	var disabled_points = []
-#	var id_from
-#	while true:
-#		id_from = astar.get_closest_point(pos)
-#		if nav_points[id_from].End_Point == false:
-#			astar.set_point_disabled(id_from)
-#			disabled_points.push_back(id_from)
-#		else:
-#			break;
-#			
-#	for p in disabled_points:
-#		astar.set_point_disabled(p, false)
-#		
-#	return id_from
-#	pass
-	
-	
 func can_see(from:Spatial, to:Spatial):
 	var space_state = get_world().direct_space_state
 	var result : Dictionary = space_state.intersect_ray(from.global_transform.origin, to.global_transform.origin)

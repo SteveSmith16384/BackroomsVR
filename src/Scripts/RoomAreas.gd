@@ -11,8 +11,9 @@ func _on_Area_Remove_body_exited(body):
 	pass
 
 
-func _on_Area_Remove_body_entered(body):
+func _on_Area_Add_body_entered(body):
 	if body.is_in_group("Player"):
-		get_parent().spacestation.player_n(get_parent())
-		get_parent().spacestation.player_s(get_parent())
+		var room = get_parent()
+		get_parent().spacestation.player_n(room)
+		get_parent().spacestation.player_s(room)
 	pass
