@@ -33,7 +33,9 @@ size = Vector3( 0.1, 0.1, 0.1 )
 
 [sub_resource type="Environment" id=5]
 background_sky = SubResource( 6 )
+background_energy = 0.4
 ambient_light_color = Color( 1, 1, 1, 1 )
+ambient_light_energy = 0.4
 ambient_light_sky_contribution = 0.0
 
 [node name="Main" type="Spatial"]

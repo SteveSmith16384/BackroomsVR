@@ -29,5 +29,11 @@ shape = SubResource( 2 )
 
 [node name="Floor" parent="." instance=ExtResource( 5 )]
 
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.8783, 0 )
+visible = false
+spot_range = 10.0
+spot_angle = 90.0
+
 [connection signal="body_exited" from="Areas/Area_Remove" to="Areas" method="_on_Area_Remove_body_exited"]
 [connection signal="body_entered" from="Areas/Area_Add" to="Areas" method="_on_Area_Add_body_entered"]
