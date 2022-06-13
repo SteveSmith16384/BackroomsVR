@@ -59,9 +59,6 @@ func _physics_process(delta):
 	
 
 func play_footstep_sfx():
-	if Globals.mode == Globals.GameMode.CLASSIC:
-		return
-		
 	if actually_play_footstep == false:
 		return
 		

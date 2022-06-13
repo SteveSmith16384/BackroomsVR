@@ -32,11 +32,6 @@ func _ready():
 	if Globals.AUTOSTART:
 		yield(get_tree().create_timer(1), "timeout")
 		start_game_proper()
-		
-		
-#	if Globals.RELEASE_MODE == false:
-#		yield(get_tree().create_timer(5), "timeout")
-#		exit_entered(player)
 	pass
 
 

@@ -1,0 +1,141 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://MapSections/Wall2x2.tscn" type="PackedScene" id=1]
+[ext_resource path="res://MapSections/Walkway2x2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/Room.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/RoomAreas.gd" type="Script" id=4]
+[ext_resource path="res://Floor.tscn" type="PackedScene" id=5]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 22, 3, 18 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 8, 1, 5 )
+
+[node name="Room1" type="Spatial"]
+script = ExtResource( 3 )
+
+[node name="Spatial" type="Spatial" parent="."]
+
+[node name="Wall2x2" parent="Spatial" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -2 )
+
+[node name="Wall2x3" parent="Spatial" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -6 )
+
+[node name="Wall2x5" parent="Spatial" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 6 )
+
+[node name="Wall2x6" parent="Spatial" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 2 )
+
+[node name="Wall2x7" parent="Spatial" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -2 )
+
+[node name="Wall2x8" parent="Spatial" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -6 )
+
+[node name="Wall2x9" parent="Spatial" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 6 )
+
+[node name="Wall2x10" parent="Spatial" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 2 )
+
+[node name="Wall2x4" parent="Spatial" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -10 )
+
+[node name="Wall2x11" parent="Spatial" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -10 )
+
+[node name="Wall2x12" parent="Spatial" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -10 )
+
+[node name="Wall2x13" parent="Spatial" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 10 )
+
+[node name="Wall2x14" parent="Spatial" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 10 )
+
+[node name="Wall2x15" parent="Spatial" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 10 )
+
+[node name="Walkway2x2" parent="Spatial" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2 )
+
+[node name="Walkway2x3" parent="Spatial" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -6 )
+
+[node name="Walkway2x18" parent="Spatial" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -10 )
+
+[node name="Walkway2x4" parent="Spatial" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -6 )
+
+[node name="Walkway2x5" parent="Spatial" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -2 )
+
+[node name="Walkway2x6" parent="Spatial" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -2 )
+
+[node name="Walkway2x7" parent="Spatial" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -6 )
+
+[node name="Walkway2x8" parent="Spatial" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -6 )
+
+[node name="Walkway2x9" parent="Spatial" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2 )
+
+[node name="Walkway2x10" parent="Spatial" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 6 )
+
+[node name="Walkway2x11" parent="Spatial" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 2 )
+
+[node name="Walkway2x12" parent="Spatial" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2 )
+
+[node name="Walkway2x13" parent="Spatial" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 6 )
+
+[node name="Walkway2x14" parent="Spatial" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 6 )
+
+[node name="Walkway2x19" parent="Spatial" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 10 )
+
+[node name="Walkway2x15" parent="Spatial" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2 )
+
+[node name="Walkway2x16" parent="Spatial" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 2 )
+
+[node name="Walkway2x17" parent="Spatial" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 6 )
+
+[node name="Areas" type="Spatial" parent="."]
+script = ExtResource( 4 )
+
+[node name="Area_Remove" type="Area" parent="Areas"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Areas/Area_Remove"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+shape = SubResource( 1 )
+
+[node name="Area_N" type="Area" parent="Areas"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Areas/Area_N"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6 )
+shape = SubResource( 2 )
+
+[node name="Area_S" type="Area" parent="Areas"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Areas/Area_S"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6 )
+shape = SubResource( 2 )
+
+[node name="Floor" parent="." instance=ExtResource( 5 )]
+
+[connection signal="body_exited" from="Areas/Area_Remove" to="Areas" method="_on_Area_Remove_body_exited"]
+[connection signal="body_entered" from="Areas/Area_N" to="Areas" method="_on_Area_N_body_entered"]
+[connection signal="body_entered" from="Areas/Area_S" to="Areas" method="_on_Area_S_body_entered"]

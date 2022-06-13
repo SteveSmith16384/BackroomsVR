@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 64, 0.5, 64 )
+extents = Vector3( 12, 0.5, 12 )
 
 [sub_resource type="SpatialMaterial" id=6]
 albedo_color = Color( 1, 0, 0.980392, 1 )
@@ -9,12 +9,14 @@ albedo_color = Color( 1, 0, 0.980392, 1 )
 [node name="Floor" type="StaticBody"]
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )
 shape = SubResource( 1 )
 
 [node name="Floor" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )
 visible = false
 cast_shadow = 0
-width = 100.0
+width = 24.0
 height = 1.0
-depth = 100.0
+depth = 24.0
 material = SubResource( 6 )

@@ -1,25 +1,20 @@
 extends Node
 
 const VERSION = "0.2"
-const RELEASE_MODE = true
+const RELEASE_MODE = false
 
-const AUTOSTART = false and !RELEASE_MODE
-const EXIT_CLOSE = false and !RELEASE_MODE
-const ZOMBIE = false and !RELEASE_MODE
-const NO_ENEMIES = false and !RELEASE_MODE
-const OPEN_MAZE = false and !RELEASE_MODE
-const TEST_MODE = false and !RELEASE_MODE
-const DISABLE_ATTACKS = false and !RELEASE_MODE
-const PLAYER_INVINCIBLE = false and !RELEASE_MODE
+const AUTOSTART = true and !RELEASE_MODE
+#const EXIT_CLOSE = false and !RELEASE_MODE
+#const NO_ENEMIES = false and !RELEASE_MODE
+const TEST_MODE = true and !RELEASE_MODE
+#const DISABLE_ATTACKS = false and !RELEASE_MODE
+#const PLAYER_INVINCIBLE = false and !RELEASE_MODE
 
 const SQ_SIZE = 4
 const VIEW_RANGE = 20
 
 var WIDTH : int = 16
 var HEIGHT : int = 16
-
-enum GameMode {CLASSIC, NEW}
-var mode = GameMode.CLASSIC
 
 var next_nav_id : int = 0
 
