@@ -6,7 +6,7 @@
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 2 )
 
-[node name="StaticBody" type="StaticBody"]
+[node name="Shelf" type="StaticBody"]
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 mesh = ExtResource( 1 )
