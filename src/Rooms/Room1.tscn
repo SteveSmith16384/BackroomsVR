@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://MapSections/Wall2x2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://MapSections/Walkway2x2.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenery/BookcaseOpen.tscn" type="PackedScene" id=3]
 
 [node name="Room1" type="Spatial"]
 
@@ -86,6 +85,3 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 10 )
 
 [node name="Walkway2x15" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2 )
-
-[node name="BookcaseOpen" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0 )

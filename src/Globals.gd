@@ -7,7 +7,7 @@ const AUTOSTART = true and !RELEASE_MODE
 const TEST_MODE = false and !RELEASE_MODE
 
 const SQ_SIZE = 4
-const VIEW_RANGE = 100
+const VIEW_RANGE = 90
 
 var rnd : RandomNumberGenerator
 
