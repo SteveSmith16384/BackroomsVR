@@ -6,6 +6,10 @@ var rooms_created = {}
 
 func _ready():
 	load_room(Vector3())
+	
+	var cls = load("res://TeleportingBox.tscn")
+	var box = cls.instance()
+	self.add_child(box)
 	pass
 	
 	

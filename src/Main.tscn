@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Assets/fonts/SF Distant Galaxy.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://VRScript.gd" type="Script" id=3]
+[ext_resource path="res://DebuggingSphere.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Torch.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://IntroScene.tscn" type="PackedScene" id=10]
@@ -60,7 +61,6 @@ Hello2!
 Hello2!"
 
 [node name="World" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4 )
 
 [node name="IntroScene" parent="World" instance=ExtResource( 10 )]
 
@@ -83,6 +83,12 @@ texture = SubResource( 3 )
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.94352 )
 mesh = SubResource( 7 )
 material/0 = SubResource( 8 )
+
+[node name="Position3D_Left" type="Position3D" parent="ARVROrigin/ARVRCamera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.47593, 0, -1.41663 )
+
+[node name="DebuggingSphere" parent="ARVROrigin/ARVRCamera" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.97009 )
 
 [node name="LeftController" type="ARVRController" parent="ARVROrigin"]
 
