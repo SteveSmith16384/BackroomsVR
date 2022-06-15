@@ -1,10 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://MapSections/Wall2x2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Rooms/DarkRoom.gd" type="Script" id=2]
-[ext_resource path="res://Scenery/Crate.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenery/VHSCassette.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenery/OfficeChair.tscn" type="PackedScene" id=5]
 
 [node name="DarkRoom" type="Spatial"]
 script = ExtResource( 2 )
@@ -107,15 +104,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10 )
 
 [node name="Wall2x15" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 10 )
-
-[node name="Crate" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -7 )
-
-[node name="VHSCassette" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, 0 )
-
-[node name="OfficeChair" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.88676, 1.58311, 0 )
 
 [node name="DarknessCentre" type="Position3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, 0 )

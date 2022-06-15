@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Assets/fonts/SF Distant Galaxy.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://VRScript.gd" type="Script" id=3]
+[ext_resource path="res://Assets/sfx/Backrooms sound.ogg" type="AudioStream" id=4]
 [ext_resource path="res://Torch.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://IntroScene.tscn" type="PackedScene" id=10]
@@ -128,6 +129,10 @@ environment = SubResource( 5 )
 
 [node name="Player" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.48124, 15.7769 )
+
+[node name="AudioAmbience" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+autoplay = true
 
 [connection signal="area_entered" from="ARVROrigin/LeftController/LeftHandArea" to="." method="_on_LeftHandArea_area_entered"]
 [connection signal="area_exited" from="ARVROrigin/LeftController/LeftHandArea" to="." method="_on_LeftHandArea_area_exited"]

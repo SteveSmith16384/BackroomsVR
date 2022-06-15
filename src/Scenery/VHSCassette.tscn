@@ -7,12 +7,12 @@
 albedo_texture = ExtResource( 2 )
 
 [sub_resource type="BoxShape" id=2]
-extents = Vector3( 0.474548, 0.0693229, 0.250383 )
+extents = Vector3( 0.282295, 0.0363247, 0.159829 )
 
 [node name="VHSCassette" type="RigidBody"]
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0 )
 mesh = ExtResource( 1 )
 material/0 = SubResource( 1 )
 
