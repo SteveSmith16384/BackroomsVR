@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://MapSections/RoomFloor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://RobotSfx.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/Room.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/RoomAreas.gd" type="Script" id=4]
 [ext_resource path="res://Floor.tscn" type="PackedScene" id=5]
+[ext_resource path="res://MapSections/RoomCeiling.tscn" type="PackedScene" id=6]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 72, 3, 72 )
@@ -41,6 +42,8 @@ spot_angle = 90.0
 
 [node name="RobotSfx" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.7606, 0, 0 )
+
+[node name="RoomCeiling" parent="." instance=ExtResource( 6 )]
 
 [connection signal="body_exited" from="Areas/Area_Remove" to="Areas" method="_on_Area_Remove_body_exited"]
 [connection signal="body_entered" from="Areas/Area_Add" to="Areas" method="_on_Area_Add_body_entered"]
