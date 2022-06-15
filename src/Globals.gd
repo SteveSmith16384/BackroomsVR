@@ -4,6 +4,8 @@ const VERSION = "0.2"
 const RELEASE_MODE = false
 
 const AUTOSTART = true and !RELEASE_MODE
+const TEST_ROOM = true and !RELEASE_MODE
+const TEST_ROOM_NAME = "DarkRoom"
 const TEST_MODE = false and !RELEASE_MODE
 
 const SQ_SIZE = 4
