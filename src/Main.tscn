@@ -1,9 +1,8 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Assets/fonts/SF Distant Galaxy.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://VRScript.gd" type="Script" id=3]
-[ext_resource path="res://DebuggingSphere.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Torch.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://IntroScene.tscn" type="PackedScene" id=10]
@@ -41,7 +40,7 @@ ambient_light_sky_contribution = 0.0
 fog_enabled = true
 fog_color = Color( 0.203922, 0.192157, 0.0784314, 1 )
 fog_depth_begin = 30.0
-fog_depth_end = 60.0
+fog_depth_end = 40.0
 
 [node name="Main" type="Spatial"]
 script = ExtResource( 1 )
@@ -86,9 +85,6 @@ material/0 = SubResource( 8 )
 
 [node name="Position3D_Left" type="Position3D" parent="ARVROrigin/ARVRCamera"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.47593, 0, -1.41663 )
-
-[node name="DebuggingSphere" parent="ARVROrigin/ARVRCamera" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.97009 )
 
 [node name="LeftController" type="ARVRController" parent="ARVROrigin"]
 

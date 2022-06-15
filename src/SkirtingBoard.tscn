@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="CubeMesh" id=3]
+size = Vector3( 4.1, 0.1, 0.05 )
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0.976471, 1, 0.647059, 1 )
+
+[node name="SkirtingBoard" type="MeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0511214, 0.0258419 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
