@@ -20,11 +20,11 @@ func _process(delta):
 	pass
 
 
-func _on_VisibilityNotifier_camera_entered(camera):
+func _on_VisibilityNotifier_camera_entered(_camera):
 	can_move = false
 	pass
 
 
-func _on_VisibilityNotifier_camera_exited(camera):
+func _on_VisibilityNotifier_camera_exited(_camera):
 	can_move = true
 	pass

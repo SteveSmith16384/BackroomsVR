@@ -44,17 +44,17 @@ func remove_room(room):
 	
 func player_n(from_room):
 	var pos = from_room.translation
-	pos.z += 24
+	pos.z += 32
 	load_room(pos)
-	pos.z += 24
+	pos.z += 32
 	load_room(pos)
 	pass
 	
 	
 func player_s(from_room):
 	var pos = from_room.translation
-	pos.z -= 24
+	pos.z -= 32
 	load_room(pos)
-	pos.z -= 24
+	pos.z -= 32
 	load_room(pos)
 	pass

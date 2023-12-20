@@ -3,16 +3,16 @@
 importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/difusse.jpg-76e5130f4a857829aa8b153c5036042a.s3tc.stex"
-path.etc2="res://.import/difusse.jpg-76e5130f4a857829aa8b153c5036042a.etc2.stex"
+path.etc="res://.import/difusse.jpg-76e5130f4a857829aa8b153c5036042a.etc.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
+"imported_formats": [ "s3tc", "etc" ],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Models/Zombie/difusse.jpg"
-dest_files=[ "res://.import/difusse.jpg-76e5130f4a857829aa8b153c5036042a.s3tc.stex", "res://.import/difusse.jpg-76e5130f4a857829aa8b153c5036042a.etc2.stex" ]
+dest_files=[ "res://.import/difusse.jpg-76e5130f4a857829aa8b153c5036042a.s3tc.stex", "res://.import/difusse.jpg-76e5130f4a857829aa8b153c5036042a.etc.stex" ]
 
 [params]
 
